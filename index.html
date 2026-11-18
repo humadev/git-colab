@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Collaboration Playground</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="team-banner" class="team-banner">
+    <div class="container banner-inner">
+      <div class="banner-top">
+        <span class="brand-pill">Git &amp; GitHub Classroom</span>
+        <span id="sprint-status" class="status-badge">Sprint 1: Learning Git Basics</span>
+      </div>
+      <h1>Git Collaboration Playground</h1>
+
+      <!-- 🎯 EXERCISE 2 (MERGE CONFLICT): Edit the motto text below on two different branches! -->
+      <p id="class-motto" class="motto">"Commit early, commit often, and never fear a merge conflict!"</p>
+      <!-- 🎯 END EXERCISE 2 -->
+
+      <div class="stats-bar" aria-label="Classroom statistics">
+        <div class="stat-pill">
+          <span class="stat-value" id="contributor-count">0</span>
+          <span class="stat-label">Contributors</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-value" id="shoutout-count">0</span>
+          <span class="stat-label">Class Shoutouts</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-value" id="checklist-progress">0 / 6</span>
+          <span class="stat-label">Lab Steps Done</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- SECTION 1: CLASS CONTRIBUTORS WALL -->
+    <section id="contributors-section" class="panel" aria-labelledby="contributors-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="contributors-heading">Class Contributors Wall</h2>
+          <p class="section-subtitle">
+            Each student adds their own profile card directly in <code>index.html</code> on a feature branch.
+          </p>
+        </div>
+        <div class="controls-bar">
+          <label class="sr-only" for="search-cards">Search contributors</label>
+          <input
+            type="search"
+            id="search-cards"
+            class="search-input"
+            placeholder="Search name, @handle, bio, or git command..."
+            autocomplete="off"
+          />
+          <div class="filter-group" role="group" aria-label="Filter by role">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="Instructor">Instructor</button>
+            <button type="button" class="filter-btn" data-filter="Student">Student</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="contributors-grid" class="contributors-grid">
+        <article class="student-card" data-role="Instructor">
+          <div class="card-header">
+            <div class="avatar avatar-instructor" aria-hidden="true">IN</div>
+            <div class="card-identity">
+              <h3 class="card-name">Course Instructor</h3>
+              <p class="card-handle">@instructor-handle</p>
+            </div>
+            <span class="role-badge role-instructor">Instructor</span>
+          </div>
+          <p class="card-bio">
+            Welcome to our shared Git playground! Fork or clone this repo, create a branch, and open your first Pull Request.
+          </p>
+          <div class="card-footer">
+            <span class="cmd-label">Favorite Git command</span>
+            <code class="cmd-chip">git log --oneline --graph</code>
+          </div>
+        </article>
+
+        <article class="student-card" data-role="Student">
+          <div class="card-header">
+            <div class="avatar avatar-student" aria-hidden="true">AR</div>
+            <div class="card-identity">
+              <h3 class="card-name">Alex Rivera</h3>
+              <p class="card-handle">@alexrivera-dev</p>
+            </div>
+            <span class="role-badge role-student">Student</span>
+          </div>
+          <p class="card-bio">
+            Excited to learn how feature branches keep the main branch clean while everyone collaborates at the same time.
+          </p>
+          <div class="card-footer">
+            <span class="cmd-label">Favorite Git command</span>
+            <code class="cmd-chip">git switch -c</code>
+          </div>
+        </article>
+
+        <!-- 🎯 EXERCISE 1 (ADD YOUR CARD): Copy the <article class="student-card"> block below, paste it above this comment, and fill in your details! -->
+        <!--
+        <article class="student-card" data-role="Student">
+          <div class="card-header">
+            <div class="avatar avatar-student" aria-hidden="true">YN</div>
+            <div class="card-identity">
+              <h3 class="card-name">Your Name</h3>
+              <p class="card-handle">@your-github-handle</p>
+            </div>
+            <span class="role-badge role-student">Student</span>
+          </div>
+          <p class="card-bio">
+            Share one thing you want to build or learn this semester!
+          </p>
+          <div class="card-footer">
+            <span class="cmd-label">Favorite Git command</span>
+            <code class="cmd-chip">git status</code>
+          </div>
+        </article>
+        -->
+      </div>
+
+      <p id="empty-filter-msg" class="empty-state hidden">
+        No contributors match your current search or role filter.
+      </p>
+    </section>
+
+    <!-- SECTION 2: CLASS DEV SHOUTOUTS & FAVORITE TOOLS -->
+    <section id="shoutouts-section" class="panel" aria-labelledby="shoutouts-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="shoutouts-heading">Class Dev Shoutouts &amp; Favorite Tools</h2>
+          <p class="section-subtitle">
+            Practice quick one-line additions or intentional adjacent-line list conflicts in <code>#shoutouts-list</code>.
+          </p>
+        </div>
+      </div>
+
+      <ul id="shoutouts-list" class="shoutouts-list">
+        <li class="shoutout-item">
+          <strong>Course Instructor:</strong> VS Code + built-in Source Control view makes diffing changes super visual.
+        </li>
+        <li class="shoutout-item">
+          <strong>Alex Rivera:</strong> Running <code>git status</code> before every command saved me twice today!
+        </li>
+
+        <!-- 🎯 EXERCISE (SHOUTOUT): Copy the <li> line below, paste it above this comment, and add your favorite tool or tip! -->
+        <!--
+        <li class="shoutout-item">
+          <strong>Your Name:</strong> Your favorite shortcut, editor extension, or Git tip!
+        </li>
+        -->
+      </ul>
+    </section>
+
+    <!-- SECTION 3: INTERACTIVE GIT COLLABORATION LAB GUIDE -->
+    <section id="git-guide-section" class="panel" aria-labelledby="guide-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="guide-heading">Interactive Git Collaboration Lab Guide</h2>
+          <p class="section-subtitle">
+            Check off each step as you complete the lab. Your progress is saved locally in your browser.
+          </p>
+        </div>
+        <button type="button" id="reset-checklist" class="secondary-btn">Reset Checklist</button>
+      </div>
+
+      <ul id="lab-checklist" class="checklist">
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="1" />
+            <span class="step-content">
+              <span class="step-title">1. Clone &amp; Check Status</span>
+              <span class="step-desc">Clone the shared classroom repository and verify your starting branch is clean.</span>
+            </span>
+          </label>
+          <div class="cmd-group">
+            <div class="cmd-row">
+              <code>git clone &lt;repo-url&gt;</code>
+              <button type="button" class="copy-btn" data-cmd="git clone <repo-url>">Copy</button>
+            </div>
+            <div class="cmd-row">
+              <code>git status</code>
+              <button type="button" class="copy-btn" data-cmd="git status">Copy</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="2" />
+            <span class="step-content">
+              <span class="step-title">2. Create Your Feature Branch</span>
+              <span class="step-desc">Never commit directly to <code>main</code>. Switch to a branch named after your feature.</span>
+            </span>
+          </label>
+          <div class="cmd-group">
+            <div class="cmd-row">
+              <code>git switch -c feat/add-yourname</code>
+              <button type="button" class="copy-btn" data-cmd="git switch -c feat/add-yourname">Copy</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="3" />
+            <span class="step-content">
+              <span class="step-title">3. Edit HTML &amp; Preview Locally</span>
+              <span class="step-desc">Open <code>index.html</code>, duplicate the student card template, fill in your info, and refresh the page in your browser.</span>
+            </span>
+          </label>
+          <div class="cmd-group">
+            <div class="cmd-row">
+              <code>git diff</code>
+              <button type="button" class="copy-btn" data-cmd="git diff">Copy</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="4" />
+            <span class="step-content">
+              <span class="step-title">4. Stage &amp; Commit Changes</span>
+              <span class="step-desc">Stage your edited file and write a clear, descriptive commit message.</span>
+            </span>
+          </label>
+          <div class="cmd-group">
+            <div class="cmd-row">
+              <code>git add index.html</code>
+              <button type="button" class="copy-btn" data-cmd="git add index.html">Copy</button>
+            </div>
+            <div class="cmd-row">
+              <code>git commit -m "feat: add &lt;Your Name&gt; profile card"</code>
+              <button type="button" class="copy-btn" data-cmd='git commit -m "feat: add <Your Name> profile card"'>Copy</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="5" />
+            <span class="step-content">
+              <span class="step-title">5. Sync &amp; Push Branch</span>
+              <span class="step-desc">Pull the latest <code>main</code> changes before pushing your branch to the remote repository.</span>
+            </span>
+          </label>
+          <div class="cmd-group">
+            <div class="cmd-row">
+              <code>git pull --rebase origin main</code>
+              <button type="button" class="copy-btn" data-cmd="git pull --rebase origin main">Copy</button>
+            </div>
+            <div class="cmd-row">
+              <code>git push -u origin feat/add-yourname</code>
+              <button type="button" class="copy-btn" data-cmd="git push -u origin feat/add-yourname">Copy</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <label class="checklist-label">
+            <input type="checkbox" class="step-checkbox" data-step="6" />
+            <span class="step-content">
+              <span class="step-title">6. Open a Pull Request &amp; Resolve Merge Conflicts</span>
+              <span class="step-desc">Open a PR into <code>main</code>. If two teammates edited the same line (like <code>#class-motto</code>), resolve the conflict markers below, stage, and commit!</span>
+            </span>
+          </label>
+
+          <div class="conflict-box" aria-label="Merge conflict anatomy">
+            <div class="conflict-box-header">Anatomy of a Merge Conflict</div>
+            <pre class="conflict-code"><code><span class="conflict-head">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+&lt;p id="class-motto"&gt;"Ship small PRs every day!"&lt;/p&gt;
+<span class="conflict-sep">=======</span>
+&lt;p id="class-motto"&gt;"Test twice, merge once!"&lt;/p&gt;
+<span class="conflict-branch">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feat/motto-update</span></code></pre>
+            <p class="conflict-tip">
+              <strong>How to fix it:</strong> Keep the code you want (or combine both), delete all three marker lines (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>), then run <code>git add index.html</code> and <code>git commit</code> (or <code>git rebase --continue</code> if rebasing).
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Git Collaboration Playground &middot; Built with plain HTML, CSS, and JavaScript for hands-on classroom practice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
