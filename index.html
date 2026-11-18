@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Git Collaboration Playground</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header id="team-banner" class="team-banner">
     <div class="container banner-inner">
@@ -13,7 +15,7 @@
         <span class="brand-pill">Git &amp; GitHub Classroom</span>
         <span id="sprint-status" class="status-badge">Sprint 1: Learning Git Basics</span>
       </div>
-      <h1>Git Collaboration Playground</h1>
+      <h1>Git Collaboration Playground teknologi informasi</h1>
 
       <!-- 🎯 EXERCISE 2 (MERGE CONFLICT): Edit the motto text below on two different branches! -->
       <p id="class-motto" class="motto">"Commit early, commit often, and never fear a merge conflict!"</p>
@@ -48,13 +50,8 @@
         </div>
         <div class="controls-bar">
           <label class="sr-only" for="search-cards">Search contributors</label>
-          <input
-            type="search"
-            id="search-cards"
-            class="search-input"
-            placeholder="Search name, @handle, bio, or git command..."
-            autocomplete="off"
-          />
+          <input type="search" id="search-cards" class="search-input"
+            placeholder="Search name, @handle, bio, or git command..." autocomplete="off" />
           <div class="filter-group" role="group" aria-label="Filter by role">
             <button type="button" class="filter-btn active" data-filter="all">All</button>
             <button type="button" class="filter-btn" data-filter="Instructor">Instructor</button>
@@ -74,7 +71,8 @@
             <span class="role-badge role-instructor">Instructor</span>
           </div>
           <p class="card-bio">
-            Welcome to our shared Git playground! Fork or clone this repo, create a branch, and open your first Pull Request.
+            Welcome to our shared Git playground! Fork or clone this repo, create a branch, and open your first Pull
+            Request.
           </p>
           <div class="card-footer">
             <span class="cmd-label">Favorite Git command</span>
@@ -92,7 +90,8 @@
             <span class="role-badge role-student">Student</span>
           </div>
           <p class="card-bio">
-            Excited to learn how feature branches keep the main branch clean while everyone collaborates at the same time.
+            Excited to learn how feature branches keep the main branch clean while everyone collaborates at the same
+            time.
           </p>
           <div class="card-footer">
             <span class="cmd-label">Favorite Git command</span>
@@ -133,7 +132,8 @@
         <div>
           <h2 id="shoutouts-heading">Class Dev Shoutouts &amp; Favorite Tools</h2>
           <p class="section-subtitle">
-            Practice quick one-line additions or intentional adjacent-line list conflicts in <code>#shoutouts-list</code>.
+            Practice quick one-line additions or intentional adjacent-line list conflicts in
+            <code>#shoutouts-list</code>.
           </p>
         </div>
       </div>
@@ -173,7 +173,8 @@
             <input type="checkbox" class="step-checkbox" data-step="1" />
             <span class="step-content">
               <span class="step-title">1. Clone &amp; Check Status</span>
-              <span class="step-desc">Clone the shared classroom repository and verify your starting branch is clean.</span>
+              <span class="step-desc">Clone the shared classroom repository and verify your starting branch is
+                clean.</span>
             </span>
           </label>
           <div class="cmd-group">
@@ -193,7 +194,8 @@
             <input type="checkbox" class="step-checkbox" data-step="2" />
             <span class="step-content">
               <span class="step-title">2. Create Your Feature Branch</span>
-              <span class="step-desc">Never commit directly to <code>main</code>. Switch to a branch named after your feature.</span>
+              <span class="step-desc">Never commit directly to <code>main</code>. Switch to a branch named after your
+                feature.</span>
             </span>
           </label>
           <div class="cmd-group">
@@ -209,7 +211,8 @@
             <input type="checkbox" class="step-checkbox" data-step="3" />
             <span class="step-content">
               <span class="step-title">3. Edit HTML &amp; Preview Locally</span>
-              <span class="step-desc">Open <code>index.html</code>, duplicate the student card template, fill in your info, and refresh the page in your browser.</span>
+              <span class="step-desc">Open <code>index.html</code>, duplicate the student card template, fill in your
+                info, and refresh the page in your browser.</span>
             </span>
           </label>
           <div class="cmd-group">
@@ -235,7 +238,8 @@
             </div>
             <div class="cmd-row">
               <code>git commit -m "feat: add &lt;Your Name&gt; profile card"</code>
-              <button type="button" class="copy-btn" data-cmd='git commit -m "feat: add <Your Name> profile card"'>Copy</button>
+              <button type="button" class="copy-btn"
+                data-cmd='git commit -m "feat: add <Your Name> profile card"'>Copy</button>
             </div>
           </div>
         </li>
@@ -245,7 +249,8 @@
             <input type="checkbox" class="step-checkbox" data-step="5" />
             <span class="step-content">
               <span class="step-title">5. Sync &amp; Push Branch</span>
-              <span class="step-desc">Pull the latest <code>main</code> changes before pushing your branch to the remote repository.</span>
+              <span class="step-desc">Pull the latest <code>main</code> changes before pushing your branch to the remote
+                repository.</span>
             </span>
           </label>
           <div class="cmd-group">
@@ -265,7 +270,8 @@
             <input type="checkbox" class="step-checkbox" data-step="6" />
             <span class="step-content">
               <span class="step-title">6. Open a Pull Request &amp; Resolve Merge Conflicts</span>
-              <span class="step-desc">Open a PR into <code>main</code>. If two teammates edited the same line (like <code>#class-motto</code>), resolve the conflict markers below, stage, and commit!</span>
+              <span class="step-desc">Open a PR into <code>main</code>. If two teammates edited the same line (like
+                <code>#class-motto</code>), resolve the conflict markers below, stage, and commit!</span>
             </span>
           </label>
 
@@ -277,7 +283,10 @@
 &lt;p id="class-motto"&gt;"Test twice, merge once!"&lt;/p&gt;
 <span class="conflict-branch">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feat/motto-update</span></code></pre>
             <p class="conflict-tip">
-              <strong>How to fix it:</strong> Keep the code you want (or combine both), delete all three marker lines (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>), then run <code>git add index.html</code> and <code>git commit</code> (or <code>git rebase --continue</code> if rebasing).
+              <strong>How to fix it:</strong> Keep the code you want (or combine both), delete all three marker lines
+              (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>,
+              <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>), then run <code>git add index.html</code> and
+              <code>git commit</code> (or <code>git rebase --continue</code> if rebasing).
             </p>
           </div>
         </li>
@@ -287,10 +296,12 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Git Collaboration Playground &middot; Built with plain HTML, CSS, and JavaScript for hands-on classroom practice.</p>
+      <p>Git Collaboration Playground &middot; Built with plain HTML, CSS, and JavaScript for hands-on classroom
+        practice.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
